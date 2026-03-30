@@ -1,0 +1,462 @@
+<FlowDocument xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" FontFamily="Segoe UI" FontSize="12">
+  <FlowDocument.Tag><![CDATA[{
+  "timestamp": "2026-03-29 16:43:43",
+  "files": {
+    "E:\\visual studio\\insiders\\repos\\Project1\\homework\\大作业题组（一）-混凝土配筋\\大作业题组（一）-混凝土配筋\\大作业题组（一）-混凝土配筋.vcxproj": {
+      "before": "7VlNb9s2GO55wH7BLoLQwckhlhNnTbrIKlI7M4w5H6jzcRlQ0BJtc5VEgaTSpOuAHTbsMOw+DB0GDAN22rkFhv2bZEX/xV6JFGX5I46RNRmC+GBA1EPy5cOXz/vy1eCje/fsRyeBbxxjxgkNa+ZyuWIaOHSpR8J+zYxFb2ndfOR8+IG9x+iX2BVGA/dQ7It9xPpY8Jr5OCa+ZxowSghPAyGiTy2LuwMcIF4OiMsopz1RdmlgefgY+zTCzAp4N+lmrVQqVRNGNwy7JXDQZDSOjDbqYr9mqgnrNOyRfsyQAAO5BAN80lujFbp+7OGa2cDduP/yiITVlawH9CkM5aQY2yo2JqYkP3vPR6JHWeCkg9iWfpYIaJB8TOo+w7gn2MeI4xnmKdRNGCjZO3mwelXuYIj3wtxFpl2atzmNsy3todJhwQHAlcVpwWmbPu0iP3fTw7ryk0N5wpzltXLFtsaalVd9jk+fU+ZJp0t62lbWpBBquGZMPOerZRejtfVqb2ltfX1laXUZPVh66FaqSw8/qaLqCsLVbqXytXbVtI8a5gmlYgcFmEfIxc7573+c/f3q7M3P73776e1f3569+eaf16/Pv//l/NWv77778e2fP9hWsYMaBc6GR59zqQXZCdErrSQrvRCSDJOalxOpxCCIKBOGWmzNvL9wWFeKs4fEYPGLbS0s9SgqK00qR7Al3DSsSRsEB9UjiYbUzNL9hcKxXXx5fyGzfrFUq5WG5KNkZnpU6JKdjKKm7J9G2NmMIp+4qVyNHN70taLugON0ljbpMsQI5o5gMbat8XbVITNwn1KfY+EcL69W88OVtSpwfYAYcgVmHUAehAT0HMYutE7lHkjPt8OYh7aCsF0fcT04cP8Zc0cD6mOgoM9QsBsJEpAX6Vaq7Zn6+kaJ14J9faTfHm+FOHB9tN0WX23NJ9BFYZadC3Fz60TgMElBQbAEpJ4qgkLQTSdKscOhodC5A2qHPSnJl+uRaVxngCGJNedSuUJwSG2CIDbOBwg5S4Jmg7DRcDUUbcoxwLK4NaS1+IRwwRcgUs09TmlRh6w2dZEP8aiBBMrihw6Pl6L2KkSNhIM7qvQ1ZkrCkSrRHU3Taco86vYRlZ2zgq4lR38bJTdofWiTOwhkuyRMU1mJHpKN+TLbzNXqfp0GEfGxagA9O0IsBBluJzd2J/2HZLPQKBMegHYa7foAu89UhqQfNWCPYdB/F3NOWW47d45aO9WVjaeNrccHzY2n9d2dzm57a+PjhSn4xeSmMHkkPVWSo8OlHYUu3oaUV5k02qpyNWt03XabhM9yDjpxt3PKgXAHBuCQFtpW3qSnbOIQQ3FCZvMtOX1yzVBzT32dGaHnlBfMnKDhmHfFXc/OTVrLKOV3lyvt+2dx6CYLTb0jWQX4i1r0xFeasVYoGIFg72aw7O4z4YXupN1KJp76UQOm+Yb0sp07L5Oe/R69bOgWcsPKcmOaAnK46ckyA/JVNRISQKib0vSOr73VugQMLuwjB/QGBKqwIlmsOJ21ootg+bobOMKhB7XmpPgxiZgJANu6TrkspBmjezFfkMyk7n8ulncyqRKAGTKZx2ZwA+0Z+feHLkZBc7PsRlGWuU3GBYiEs1EMdxGbDePC65AXeBgol5Fbm39lyRVaydSY8YOC6WMol4Z7UGQMeHkG0MOc9MMtH88CQjGZHBMvRv4spCRkxrwZHRo2TsZ8RQwhP3lltKg7v8zB1TcrXcZQxerJNQldkXf+BQ==",
+      "after": "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"
+    }
+  }
+}]]></FlowDocument.Tag>
+  <Section Margin="0,24" TextAlignment="Center">
+    <Paragraph FontSize="24" FontWeight="Bold" Margin="12,0">
+      <LineBreak />
+      <Span Foreground="Gray">Qt Visual Studio Tools</Span>
+    </Paragraph>
+    <Paragraph FontSize="42" Margin="12,0" FontWeight="Bold">
+      <Span TextDecorations="Underline">Project Format Conversion</Span>
+    </Paragraph>
+    <Paragraph Margin="12,8" FontSize="18">
+      <Span>Report generated on 2026-03-29 16:43:43</Span>
+    </Paragraph>
+  </Section>
+  <Section>
+    <Paragraph FontSize="32" FontWeight="Bold" Margin="12,0">
+      <Span>Files</Span>
+    </Paragraph>
+    <Paragraph Margin="24,12,0,0">
+      <Span FontFamily="Consolas" FontSize="14" Background="WhiteSmoke"><![CDATA[E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj]]></Span>
+      <LineBreak />
+      <Hyperlink NavigateUri="file://E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj?before">[Before]</Hyperlink>
+      <Hyperlink NavigateUri="file://E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj?after">[After]</Hyperlink>
+      <Hyperlink NavigateUri="file://E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj?diff&amp;before&amp;after">
+                        [Diff before/after]
+                    </Hyperlink>
+      <Hyperlink NavigateUri="file://E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj?diff&amp;before&amp;current">
+                        [Diff before/current]
+                    </Hyperlink>
+      <Hyperlink NavigateUri="file://E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj?diff&amp;after&amp;current">
+                        [Diff after/current]
+                    </Hyperlink>
+      <LineBreak />
+    </Paragraph>
+  </Section>
+  <Section>
+    <Paragraph FontSize="32" FontWeight="Bold" Margin="12,0">
+      <Span>Changes</Span>
+    </Paragraph>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Converting custom build steps to Qt/MSBuild items]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      ]]></Span><Span Background="LightCoral"><![CDATA[<AdditionalIncludeDirectories></AdditionalIncludeDirectories>]]></Span>
+            </Paragraph>
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span><![CDATA[      ]]></Span><Span Background="LightGreen"><![CDATA[<AdditionalIncludeDirectories>GeneratedFiles\$(ConfigurationName);GeneratedFiles;</AdditionalIncludeDirectories>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Enabling multi-processor compilation]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[      <MultiProcessorCompilation>true</MultiProcessorCompilation>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Project format version]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Keyword>QtVS_v304</Keyword>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Fallback for QTMSBUILD environment variable]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <QtMsBuild Condition="'$(QtMsBuild)'=='' OR !Exists('$(QtMsBuild)\qt.targets')">$(MSBuildProjectDirectory)\QtMsBuild</QtMsBuild>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Default Qt properties]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <Import Project="$(QtMsBuild)\qt_defaults.props" Condition="Exists('$(QtMsBuild)\qt_defaults.props')" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Qt build settings]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <PropertyGroup Label="QtSettings" Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Warn if Qt/MSBuild is not found]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <Target Name="QtMsBuildNotFound" BeforeTargets="CustomBuild;ClCompile" Condition="!Exists('$(QtMsBuild)\qt.targets') OR !Exists('$(QtMsBuild)\Qt.props')">]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Message Importance="High" Text="QtMsBuild: could not locate qt.targets, qt.props; project may not build correctly." />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  </Target>]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Qt property sheet]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Import Project="$(QtMsBuild)\Qt.props" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Import Project="$(QtMsBuild)\Qt.props" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Import Project="$(QtMsBuild)\Qt.props" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[    <Import Project="$(QtMsBuild)\Qt.props" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+    <Paragraph FontSize="20" FontWeight="Bold" Margin="12">
+      <Span><![CDATA[🡺 Qt targets]]></Span>
+    </Paragraph>
+    <Table CellSpacing="0" BorderBrush="Gray" BorderThickness="0.5">
+      <Table.Columns>
+        <TableColumn />
+        <TableColumn />
+      </Table.Columns>
+      <TableRowGroup>
+        <TableRow Background="Orange">
+          <TableCell ColumnSpan="2" BorderThickness="0.5" BorderBrush="Gray">
+            <Paragraph Margin="10,5" FontWeight="Bold">
+              <Span><![CDATA[E:\visual studio\insiders\repos\Project1\homework\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋\大作业题组（一）-混凝土配筋.vcxproj]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+        <TableRow>
+          <TableCell ColumnSpan="2" Background="WhiteSmoke" BorderBrush="Gray" BorderThickness="0.5" />
+        </TableRow>
+        <TableRow>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0" />
+          </TableCell>
+          <TableCell BorderThickness="0, 0, 0.5, 0" BorderBrush="Gray">
+            <Paragraph FontFamily="Consolas" Margin="4, 0">
+              <Span Background="LightGreen"><![CDATA[  <Import Project="$(QtMsBuild)\qt.targets" Condition="Exists('$(QtMsBuild)\qt.targets')" />]]></Span>
+            </Paragraph>
+          </TableCell>
+        </TableRow>
+      </TableRowGroup>
+    </Table>
+  </Section>
+  <Section>
+    <Paragraph />
+  </Section>
+</FlowDocument>
+<!--Qk3gA4btrz2UR+sZpdZAsy+B3SyxLGU2NdK336+SeI0=-->
