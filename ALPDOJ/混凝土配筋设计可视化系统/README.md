@@ -33,9 +33,9 @@
 
 	├── designEle.h                 //存储用户输入的数据和程序输出的数据
 
-	├── rebar.h/rebar.cpp          //钢筋类，计算钢筋相关参数
+	├── rebar.h/rebar.cpp           //钢筋类，计算钢筋相关参数
 
-	├── Individual.h               //遗传算法中的个体类，存储个体数据
+	├── Individual.h                //遗传算法中的个体类，存储个体数据
 
 	└── 混凝土配筋设计.vcxproj # VS 项目工程配置文件
 # 参考规范
