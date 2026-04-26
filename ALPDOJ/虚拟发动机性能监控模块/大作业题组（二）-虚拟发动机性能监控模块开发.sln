@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37027.9 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "大作业题组（二）-虚拟发动机性能监控模块开发", "大作业题组（二）-虚拟发动机性能监控模块开发\大作业题组（二）-虚拟发动机性能监控模块开发.vcxproj", "{BEBB0598-098C-4862-9BA3-03BD1D491A5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEBB0598-098C-4862-9BA3-03BD1D491A5D}.Debug|x64.ActiveCfg = Debug|x64
+		{BEBB0598-098C-4862-9BA3-03BD1D491A5D}.Debug|x64.Build.0 = Debug|x64
+		{BEBB0598-098C-4862-9BA3-03BD1D491A5D}.Release|x64.ActiveCfg = Release|x64
+		{BEBB0598-098C-4862-9BA3-03BD1D491A5D}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {382E0094-E072-4292-95DB-91E2731C40CD}
+	EndGlobalSection
+EndGlobal
