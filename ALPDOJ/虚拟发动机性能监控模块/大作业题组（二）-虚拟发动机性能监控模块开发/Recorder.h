@@ -15,6 +15,7 @@ public:
     bool openNewSession(const std::string& outputDir);
     void append(const Snapshot& snapshot);
     void close();
+    bool logCreated() const;
 
     std::string csvPath() const { return m_csvPath; }
     std::string logPath() const { return m_logPath; }
@@ -29,6 +30,7 @@ private:
     std::ofstream m_log;
     std::string m_csvPath;
     std::string m_logPath;
+    bool m_logHeaderWritten = false;
 };
 
-}  // namespace eicas
+} 

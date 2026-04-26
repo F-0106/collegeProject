@@ -7,6 +7,7 @@
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QCheckBox>
 #include <QtWidgets/QTextEdit>
 #include <QtCore/QTimer>
 
@@ -36,6 +37,7 @@ private:
     void updateUi(const eicas::Snapshot& snapshot);
     void updateFaultButton(QPushButton* button, bool active);
     void updateAlerts(const eicas::Snapshot& snapshot);
+    void updateRecordInfo();
 
     static QString phaseText(eicas::EnginePhase phase);
     static QString valueText(const std::optional<double>& value, int precision);
@@ -59,7 +61,10 @@ private:
     QLabel* runLamp_ = nullptr;
     QLabel* recordInfo_ = nullptr;
     QTextEdit* alerts_ = nullptr;
+    QCheckBox* autoFaultMode_ = nullptr;
 
     std::vector<std::pair<eicas::FaultCode, QPushButton*>> faultButtons_;
     std::vector<TimedAlert> visibleAlerts_;
+    bool sessionStarted_ = false;
+    double lastRecordedTimeSec_ = -1.0;
 };

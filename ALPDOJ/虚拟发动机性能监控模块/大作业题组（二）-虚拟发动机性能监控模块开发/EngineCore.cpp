@@ -44,6 +44,9 @@ void EngineCore::reset() {
     m_stoppingElapsedSec = 0.0;
     m_stoppingStartRpm = {0.0, 0.0};
     m_stoppingStartEgt = {kRoomTemp, kRoomTemp};
+    m_naturalFuelFlowRisk = 0.0;
+    m_naturalOverspeedRisk = 0.0;
+    m_naturalOvertempRisk = 0.0;
     m_faults.clear();
     m_lastLogTimeSec.clear();
 }
@@ -73,8 +76,18 @@ bool EngineCore::faultEnabled(FaultCode code) const {
     return it != m_faults.end() && it->second;
 }
 
+void EngineCore::setAutoFaultMode(bool enabled) {
+    m_autoFaultMode = enabled;
+    if (!enabled) {
+        m_naturalFuelFlowRisk = 0.0;
+        m_naturalOverspeedRisk = 0.0;
+        m_naturalOvertempRisk = 0.0;
+    }
+}
+
 Snapshot EngineCore::tick(double dtSeconds) {
-    dtSeconds = std::max(dtSeconds, 0.0001);
+    dtSeconds = std::max(dtSeconds, 0.0);
+    const bool activeBeforeTick = (m_phase != EnginePhase::Off) || m_startRequested;
 
     if (m_stopRequested) {
         enterStopping();
@@ -88,6 +101,7 @@ Snapshot EngineCore::tick(double dtSeconds) {
     }
 
     simulateBase(dtSeconds);
+    applyNaturalFaults(dtSeconds);
     applyInjectedFaults();
 
     Snapshot snapshot{};
@@ -105,6 +119,9 @@ Snapshot EngineCore::tick(double dtSeconds) {
 
     for (size_t i = 0; i < 2; ++i) {
         snapshot.display[i].n1Percent = averagePair(snapshot.n1Sensors[i]);
+        snapshot.display[i].rpm = snapshot.display[i].n1Percent.has_value()
+            ? std::optional<double>(snapshot.display[i].n1Percent.value() * kRatedRpm / 100.0)
+            : std::nullopt;
         snapshot.display[i].egt = averagePair(snapshot.egtSensors[i]);
 
         if (!snapshot.display[i].n1Percent.has_value()) {
@@ -120,7 +137,9 @@ Snapshot EngineCore::tick(double dtSeconds) {
 
     evaluateAlerts(snapshot);
 
-    m_simTimeSec += dtSeconds;
+    if (activeBeforeTick && dtSeconds > 0.0) {
+        m_simTimeSec += dtSeconds;
+    }
     return snapshot;
 }
 
@@ -218,6 +237,52 @@ void EngineCore::enterStopping() {
     m_stoppingElapsedSec = 0.0;
     m_stoppingStartRpm = m_state.rpm;
     m_stoppingStartEgt = m_state.egt;
+}
+
+void EngineCore::applyNaturalFaults(double dtSeconds) {
+    if (!m_autoFaultMode || dtSeconds <= 0.0) {
+        return;
+    }
+
+    if (m_phase != EnginePhase::Steady) {
+        m_naturalFuelFlowRisk = std::max(0.0, m_naturalFuelFlowRisk - dtSeconds * 0.20);
+        m_naturalOverspeedRisk = std::max(0.0, m_naturalOverspeedRisk - dtSeconds * 0.20);
+        m_naturalOvertempRisk = std::max(0.0, m_naturalOvertempRisk - dtSeconds * 0.20);
+        return;
+    }
+
+    const double thrust = static_cast<double>(std::max(m_thrustStep, 0));
+    const double fuelLoad = std::max(0.0, thrust - 1.0);
+    const double speedLoad = std::max(0.0, thrust - 3.0);
+    const double tempLoad = std::max(0.0, thrust - 2.0);
+
+    auto updateRisk = [dtSeconds](double& risk, double risePerSec, double fallPerSec) {
+        if (risePerSec > 0.0) {
+            risk += dtSeconds * risePerSec;
+        } else {
+            risk -= dtSeconds * fallPerSec;
+        }
+        risk = std::clamp(risk, 0.0, 1.35);
+    };
+
+    updateRisk(m_naturalFuelFlowRisk, fuelLoad * 0.065, 0.08);
+    updateRisk(m_naturalOverspeedRisk, speedLoad * 0.045, 0.08);
+    updateRisk(m_naturalOvertempRisk, tempLoad * 0.055, 0.08);
+
+    if (m_naturalFuelFlowRisk > 0.55) {
+        m_state.fuelFlow += (m_naturalFuelFlowRisk - 0.55) * 24.0;
+    }
+    if (m_naturalOvertempRisk > 0.45) {
+        for (double& t : m_state.egt) {
+            t += (m_naturalOvertempRisk - 0.45) * 205.0;
+        }
+    }
+    if (m_naturalOverspeedRisk > 0.60) {
+        const double overspeedScale = 1.0 + (m_naturalOverspeedRisk - 0.60) * 0.16;
+        for (double& rpm : m_state.rpm) {
+            rpm *= overspeedScale;
+        }
+    }
 }
 
 void EngineCore::applyInjectedFaults() {

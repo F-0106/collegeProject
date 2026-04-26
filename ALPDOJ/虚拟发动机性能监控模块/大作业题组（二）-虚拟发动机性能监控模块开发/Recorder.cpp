@@ -38,34 +38,30 @@ bool Recorder::openNewSession(const std::string& outputDir) {
 
     m_csvPath = outputDir + "/engine_data_" + fileTag.str() + ".csv";
     m_logPath = outputDir + "/engine_alert_" + fileTag.str() + ".log";
+    m_logHeaderWritten = false;
 
     m_csv.open(m_csvPath.c_str(), std::ios::out | std::ios::trunc);
-    m_log.open(m_logPath.c_str(), std::ios::out | std::ios::trunc);
-    if (!m_csv.is_open() || !m_log.is_open()) {
+    if (!m_csv.is_open()) {
         close();
         return false;
     }
 
-    m_csv << "time_sec,phase,n1_l,n1_r,egt_l,egt_r,fuel_qty,fuel_flow,"
+    m_csv << "time_sec,phase,rpm_l,rpm_r,n1_pct_l,n1_pct_r,egt_l,egt_r,fuel_qty,fuel_flow,"
              "n1_l_state,n1_r_state,egt_l_state,egt_r_state,fuel_qty_state,fuel_flow_state,"
              "start_light,run_light\n";
-    m_log << "time_sec,level,code,text\n";
     return true;
 }
 
 void Recorder::append(const Snapshot& snapshot) {
     if (m_csv.is_open()) {
-        const auto n1l = snapshot.display[0].n1Percent;
-        const auto n1r = snapshot.display[1].n1Percent;
-        const auto egtl = snapshot.display[0].egt;
-        const auto egtr = snapshot.display[1].egt;
-
         m_csv << fixed(snapshot.simTimeSec, 3) << ","
               << phaseToText(snapshot.phase) << ","
-              << optToText(n1l, 2) << ","
-              << optToText(n1r, 2) << ","
-              << optToText(egtl, 2) << ","
-              << optToText(egtr, 2) << ","
+              << fixed(snapshot.rpm[0], 2) << ","
+              << fixed(snapshot.rpm[1], 2) << ","
+              << optToText(snapshot.display[0].n1Percent, 2) << ","
+              << optToText(snapshot.display[1].n1Percent, 2) << ","
+              << optToText(snapshot.display[0].egt, 2) << ","
+              << optToText(snapshot.display[1].egt, 2) << ","
               << optToText(snapshot.fuelQtySensor, 2) << ","
               << fixed(snapshot.fuelFlow, 2) << ","
               << stateToText(snapshot.display[0].n1State) << ","
@@ -76,20 +72,32 @@ void Recorder::append(const Snapshot& snapshot) {
               << stateToText(snapshot.fuelFlowState) << ","
               << (snapshot.startLight ? "1" : "0") << ","
               << (snapshot.runLight ? "1" : "0") << "\n";
+        m_csv.flush();
     }
 
-    if (m_log.is_open()) {
-        for (const AlertEvent& alert : snapshot.newAlertsForLog) {
-            std::string level = "WHITE";
-            if (alert.color == AlertColor::Amber) {
-                level = "AMBER";
-            } else if (alert.color == AlertColor::Red) {
-                level = "RED";
+    if (!snapshot.newAlertsForLog.empty()) {
+        if (!m_log.is_open()) {
+            m_log.open(m_logPath.c_str(), std::ios::out | std::ios::trunc);
+        }
+        if (m_log.is_open() && !m_logHeaderWritten) {
+            m_log << "time_sec,level,code,text\n";
+            m_logHeaderWritten = true;
+        }
+
+        if (m_log.is_open()) {
+            for (const AlertEvent& alert : snapshot.newAlertsForLog) {
+                std::string level = "WHITE";
+                if (alert.color == AlertColor::Amber) {
+                    level = "AMBER";
+                } else if (alert.color == AlertColor::Red) {
+                    level = "RED";
+                }
+                m_log << fixed(snapshot.simTimeSec, 3) << ","
+                      << level << ","
+                      << alert.code << ","
+                      << alert.text << "\n";
             }
-            m_log << fixed(snapshot.simTimeSec, 3) << ","
-                  << level << ","
-                  << alert.code << ","
-                  << alert.text << "\n";
+            m_log.flush();
         }
     }
 }
@@ -101,6 +109,11 @@ void Recorder::close() {
     if (m_log.is_open()) {
         m_log.close();
     }
+    m_logHeaderWritten = false;
+}
+
+bool Recorder::logCreated() const {
+    return m_logHeaderWritten;
 }
 
 std::string Recorder::phaseToText(EnginePhase phase) {
@@ -146,4 +159,4 @@ std::string Recorder::fixed(double value, int precision) {
     return out.str();
 }
 
-}  // namespace eicas
+}  

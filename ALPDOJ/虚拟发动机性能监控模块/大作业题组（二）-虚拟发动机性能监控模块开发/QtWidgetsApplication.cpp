@@ -25,7 +25,7 @@ QString readoutStyle(const QString& color) {
            "}";
 }
 
-}  // namespace
+} 
 
 QtWidgetsApplication::QtWidgetsApplication(QWidget *parent)
     : QMainWindow(parent)
@@ -77,11 +77,11 @@ QtWidgetsApplication::QtWidgetsApplication(QWidget *parent)
     gaugeGrid->setSpacing(8);
     n1Left_ = new eicas::GaugeWidget();
     n1Left_->setTitle("N1 L");
-    n1Left_->setUnit("% RPM");
+    n1Left_->setUnit("PCT / RPM");
     n1Left_->setRange(0.0, 125.0);
     n1Right_ = new eicas::GaugeWidget();
     n1Right_->setTitle("N1 R");
-    n1Right_->setUnit("% RPM");
+    n1Right_->setUnit("PCT / RPM");
     n1Right_->setRange(0.0, 125.0);
     egtLeft_ = new eicas::GaugeWidget();
     egtLeft_->setTitle("EGT L");
@@ -134,19 +134,31 @@ QtWidgetsApplication::QtWidgetsApplication(QWidget *parent)
     controls->addWidget(reset);
     leftLayout->addLayout(controls);
 
-    connect(start, &QPushButton::clicked, this, [this]() { core_.requestStart(); });
+    connect(start, &QPushButton::clicked, this, [this]() {
+        if (!sessionStarted_) {
+            if (recorder_.openNewSession("output")) {
+                sessionStarted_ = true;
+                lastRecordedTimeSec_ = -1.0;
+            }
+            updateRecordInfo();
+        }
+        core_.requestStart();
+    });
     connect(stop, &QPushButton::clicked, this, [this]() { core_.requestStop(); });
     connect(up, &QPushButton::clicked, this, [this]() { core_.increaseThrust(); });
     connect(down, &QPushButton::clicked, this, [this]() { core_.decreaseThrust(); });
     connect(reset, &QPushButton::clicked, this, [this]() {
         core_.reset();
-        recorder_.openNewSession("output");
+        recorder_.close();
+        sessionStarted_ = false;
+        lastRecordedTimeSec_ = -1.0;
         visibleAlerts_.clear();
         alerts_->clear();
-        recordInfo_->setText(QString("CSV %1\nLOG %2").arg(QString::fromStdString(recorder_.csvPath()), QString::fromStdString(recorder_.logPath())));
         for (auto& item : faultButtons_) {
             item.second->setChecked(false);
         }
+        updateRecordInfo();
+        updateUi(core_.tick(0.0));
     });
 
     auto* rightPanel = new QWidget();
@@ -163,9 +175,19 @@ QtWidgetsApplication::QtWidgetsApplication(QWidget *parent)
     rightLayout->addWidget(alertTitle);
     rightLayout->addWidget(alerts_, 1);
 
+    auto* faultBar = new QHBoxLayout();
     auto* faultTitle = new QLabel("FAULT TEST");
     faultTitle->setObjectName("SmallTitle");
-    rightLayout->addWidget(faultTitle);
+    autoFaultMode_ = new QCheckBox("AUTO FAULT MODE");
+    autoFaultMode_->setStyleSheet("QCheckBox { color:#a7adb7; font:700 12px Consolas; spacing:6px; }"
+                                  "QCheckBox::indicator { width:14px; height:14px; }"
+                                  "QCheckBox::indicator:unchecked { border:1px solid #4f5262; background:#050607; }"
+                                  "QCheckBox::indicator:checked { border:1px solid #20f04a; background:#20f04a; }");
+    faultBar->addWidget(faultTitle);
+    faultBar->addStretch();
+    faultBar->addWidget(autoFaultMode_);
+    rightLayout->addLayout(faultBar);
+    connect(autoFaultMode_, &QCheckBox::toggled, this, [this](bool checked) { core_.setAutoFaultMode(checked); });
 
     auto* faultGrid = new QGridLayout();
     faultGrid->setSpacing(7);
@@ -203,20 +225,19 @@ QtWidgetsApplication::QtWidgetsApplication(QWidget *parent)
     main->addWidget(rightPanel, 2);
     root->addLayout(main, 1);
 
-    if (recorder_.openNewSession("output")) {
-        recordInfo_->setText(QString("CSV %1\nLOG %2").arg(QString::fromStdString(recorder_.csvPath()), QString::fromStdString(recorder_.logPath())));
-    } else {
-        recordInfo_->setText("Recorder open failed");
-    }
+    updateRecordInfo();
 
     timer_ = new QTimer(this);
     connect(timer_, &QTimer::timeout, this, [this]() {
         const eicas::Snapshot snapshot = core_.tick();
-        recorder_.append(snapshot);
+        if (sessionStarted_ && (lastRecordedTimeSec_ < 0.0 || snapshot.simTimeSec > lastRecordedTimeSec_ + 1e-9)) {
+            recorder_.append(snapshot);
+            lastRecordedTimeSec_ = snapshot.simTimeSec;
+        }
         updateUi(snapshot);
     });
     timer_->start(5);
-    updateUi(core_.tick(0.0001));
+    updateUi(core_.tick(0.0));
 }
 
 QtWidgetsApplication::~QtWidgetsApplication()
@@ -267,8 +288,16 @@ QPushButton* QtWidgetsApplication::makeFaultButton(const QString& text, eicas::F
 void QtWidgetsApplication::updateUi(const eicas::Snapshot& snapshot) {
     n1Left_->setValue(snapshot.display[0].n1Percent, snapshot.display[0].n1State);
     n1Right_->setValue(snapshot.display[1].n1Percent, snapshot.display[1].n1State);
+    n1Left_->setSecondaryText(snapshot.display[0].rpm.has_value()
+        ? QString("%1 RPM").arg(snapshot.display[0].rpm.value(), 0, 'f', 0)
+        : QString("RPM --"));
+    n1Right_->setSecondaryText(snapshot.display[1].rpm.has_value()
+        ? QString("%1 RPM").arg(snapshot.display[1].rpm.value(), 0, 'f', 0)
+        : QString("RPM --"));
     egtLeft_->setValue(snapshot.display[0].egt, snapshot.display[0].egtState);
     egtRight_->setValue(snapshot.display[1].egt, snapshot.display[1].egtState);
+    egtLeft_->setSecondaryText(QString());
+    egtRight_->setSecondaryText(QString());
 
     fuelQty_->setText(valueText(snapshot.fuelQtySensor, 0));
     fuelQty_->setStyleSheet(readoutStyle(stateColor(snapshot.fuelQtyState)));
@@ -285,6 +314,7 @@ void QtWidgetsApplication::updateUi(const eicas::Snapshot& snapshot) {
         : "QLabel { background:#061006; border:2px solid #1f6e24; color:#275b2a; font:700 25px Consolas; }");
 
     updateAlerts(snapshot);
+    updateRecordInfo();
 }
 
 void QtWidgetsApplication::updateFaultButton(QPushButton* button, bool active) {
@@ -314,6 +344,21 @@ void QtWidgetsApplication::updateAlerts(const eicas::Snapshot& snapshot) {
                  QString::fromStdString(item.event.text));
         alerts_->append(line);
     }
+}
+
+void QtWidgetsApplication::updateRecordInfo() {
+    if (!sessionStarted_) {
+        recordInfo_->setText("CSV pending until START\nLOG created on first alert");
+        return;
+    }
+
+    QString text = QString("CSV %1").arg(QString::fromStdString(recorder_.csvPath()));
+    if (recorder_.logCreated()) {
+        text += QString("\nLOG %1").arg(QString::fromStdString(recorder_.logPath()));
+    } else {
+        text += QString("\nLOG pending (first valid alert)\n%1").arg(QString::fromStdString(recorder_.logPath()));
+    }
+    recordInfo_->setText(text);
 }
 
 QString QtWidgetsApplication::phaseText(eicas::EnginePhase phase) {

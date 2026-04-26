@@ -16,6 +16,7 @@ public:
     void setUnit(const QString& unit);
     void setRange(double minValue, double maxValue);
     void setValue(std::optional<double> value, ValueState state);
+    void setSecondaryText(const QString& text);
 
 protected:
     void paintEvent(QPaintEvent* event) override;
@@ -30,7 +31,8 @@ private:
     double m_minValue = 0.0;
     double m_maxValue = 125.0;
     std::optional<double> m_value;
+    QString m_secondaryText;
     ValueState m_state = ValueState::Normal;
 };
 
-}  // namespace eicas
+} 
