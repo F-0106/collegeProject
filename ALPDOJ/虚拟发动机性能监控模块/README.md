@@ -5,7 +5,7 @@
 ![Visual Studio](https://img.shields.io/badge/Visual%20Studio-2022-5C2D91?logo=visualstudio&logoColor=white)
 ![Platform](https://img.shields.io/badge/Platform-Windows%20x64-blue)
 
-大二 C++ 课程大作业：基于 **Qt Widgets + C++17 + VS2022** 开发的虚拟发动机性能监控模块。项目参考飞机 EICAS（Engine Indicating and Crew Alerting System）显示逻辑，实现双发发动机转速、排气温度、燃油余量、燃油流速的实时仿真、图形化显示、异常注入、告警检测和数据记录。
+基于 **Qt Widgets + C++17 + VS2022** 开发的虚拟发动机性能监控模块。项目参考飞机 EICAS（Engine Indicating and Crew Alerting System）显示逻辑，实现双发发动机转速、排气温度、燃油余量、燃油流速的实时仿真、图形化显示、异常注入、告警检测和数据记录。
 
 ## 项目亮点
 
