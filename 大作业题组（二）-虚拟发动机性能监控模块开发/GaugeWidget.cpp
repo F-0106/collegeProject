@@ -37,6 +37,11 @@ void GaugeWidget::setValue(std::optional<double> value, ValueState state) {
     update();
 }
 
+void GaugeWidget::setSecondaryText(const QString& text) {
+    m_secondaryText = text;
+    update();
+}
+
 void GaugeWidget::paintEvent(QPaintEvent*) {
     QPainter p(this);
     p.setRenderHint(QPainter::Antialiasing, true);
@@ -80,13 +85,24 @@ void GaugeWidget::paintEvent(QPaintEvent*) {
 
     p.setPen(QPen(QColor(90, 96, 110), 1));
     p.setBrush(Qt::NoBrush);
-    QRectF valueBox(width() / 2.0 - 62.0, 18.0, 124.0, 42.0);
+    QRectF valueBox(width() / 2.0 - 68.0, 18.0, 136.0, 56.0);
     p.drawRect(valueBox);
 
-    QFont valueFont("Consolas", 24, QFont::Bold);
-    p.setFont(valueFont);
     p.setPen(colorForState(m_state));
-    p.drawText(valueBox, Qt::AlignCenter, valueText());
+    if (m_secondaryText.isEmpty()) {
+        QFont valueFont("Consolas", 24, QFont::Bold);
+        p.setFont(valueFont);
+        p.drawText(valueBox, Qt::AlignCenter, valueText());
+    } else {
+        QFont primaryFont("Consolas", 22, QFont::Bold);
+        p.setFont(primaryFont);
+        p.drawText(QRectF(valueBox.left(), valueBox.top() + 2.0, valueBox.width(), 28.0), Qt::AlignCenter, valueText());
+
+        QFont secondaryFont("Consolas", 10, QFont::Bold);
+        p.setFont(secondaryFont);
+        p.setPen(QColor(140, 148, 160));
+        p.drawText(QRectF(valueBox.left(), valueBox.bottom() - 22.0, valueBox.width(), 18.0), Qt::AlignCenter, m_secondaryText);
+    }
 
     QFont labelFont("Consolas", 18, QFont::Bold);
     p.setFont(labelFont);

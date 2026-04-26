@@ -63,6 +63,7 @@ struct AlertEvent {
 
 struct EngineDisplayValue {
     std::optional<double> n1Percent;
+    std::optional<double> rpm;
     std::optional<double> egt;
     ValueState n1State = ValueState::Normal;
     ValueState egtState = ValueState::Normal;
@@ -103,6 +104,8 @@ public:
 
     void setFault(FaultCode code, bool enabled);
     bool faultEnabled(FaultCode code) const;
+    void setAutoFaultMode(bool enabled);
+    bool autoFaultMode() const { return m_autoFaultMode; }
 
     Snapshot tick(double dtSeconds = kTickSeconds);
 
@@ -123,6 +126,7 @@ private:
 
     void simulateBase(double dtSeconds);
     void enterStopping();
+    void applyNaturalFaults(double dtSeconds);
     void applyInjectedFaults();
     SensorState buildSensorState() const;
     void evaluateAlerts(Snapshot& snapshot);
@@ -146,6 +150,11 @@ private:
 
     std::array<double, 2> m_stoppingStartRpm{0.0, 0.0};
     std::array<double, 2> m_stoppingStartEgt{20.0, 20.0};
+
+    bool m_autoFaultMode = false;
+    double m_naturalFuelFlowRisk = 0.0;
+    double m_naturalOverspeedRisk = 0.0;
+    double m_naturalOvertempRisk = 0.0;
 
     std::unordered_map<FaultCode, bool> m_faults;
     std::unordered_map<std::string, double> m_lastLogTimeSec;
