@@ -31,4 +31,4 @@ private:
     std::string m_logPath;
 };
 
-}  // namespace eicas
+} 

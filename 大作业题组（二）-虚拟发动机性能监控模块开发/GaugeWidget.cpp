@@ -127,4 +127,4 @@ QString GaugeWidget::valueText() const {
     return QString::number(m_value.value(), 'f', 1);
 }
 
-}  // namespace eicas
+} 

@@ -25,7 +25,7 @@ QString readoutStyle(const QString& color) {
            "}";
 }
 
-}  // namespace
+} 
 
 QtWidgetsApplication::QtWidgetsApplication(QWidget *parent)
     : QMainWindow(parent)

@@ -33,4 +33,4 @@ private:
     ValueState m_state = ValueState::Normal;
 };
 
-}  // namespace eicas
+} 

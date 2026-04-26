@@ -146,4 +146,4 @@ std::string Recorder::fixed(double value, int precision) {
     return out.str();
 }
 
-}  // namespace eicas
+}  

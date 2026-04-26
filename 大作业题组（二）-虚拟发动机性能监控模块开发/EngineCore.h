@@ -151,4 +151,4 @@ private:
     std::unordered_map<std::string, double> m_lastLogTimeSec;
 };
 
-}  // namespace eicas
+} 
