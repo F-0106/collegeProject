@@ -262,7 +262,7 @@ LOG 字段包括：
 
 ## 构建验证
 
-项目已在本机使用 Visual Studio 2022 / MSBuild 验证通过：
+项目已在本机使用 Visual Studio 2022 验证通过：
 
 ```text
 Configuration: Debug | x64
@@ -279,7 +279,6 @@ x64/Debug/大作业题组（二）-虚拟发动机性能监控模块开发.exe
 
 - 首次运行前请确认 Qt 版本配置正确。
 - `output` 目录中的 CSV 和 LOG 文件为运行时生成文件，不需要手动创建。
-- 如果上传 GitHub，建议忽略 `.vs/`、`x64/`、`Debug/`、`Release/`、`*.user` 等本地构建文件。
 
 ## License
 
